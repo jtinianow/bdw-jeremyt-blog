@@ -1,0 +1,104 @@
+{
+	"posts": [
+		{
+			"title": "Why Boulder Digital Works?",
+			"description": "Just before Thanksgiving 2014, I made the decision to leave a comfortable and enjoyable job in my hometown, and go back to school. The program I chose to attend, Boulder Digital Works (or BDW for short) is anything but typical.",
+			"url": "http://bdw-jeremyt-blog.com/article-01",
+			"guid": "001",
+			"categories": ["design", "tech", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "17 Jan 2015"
+		},
+		{
+			"title": "A Typographic Tour of Denver, CO",
+			"description": "I’m new to Denver, I don’t know my way around, and I love typography and lettering. So last weekend, I decided to go on a typographic tour of the city. I hopped on my bike and set out from Washington Park north to Five Points, and back down to Broadway.",
+			"url": "http://bdw-jeremyt-blog.com/article-02",
+			"guid": "002",
+			"categories": ["design", "typography", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "24 Jan 2015"
+		},
+		{
+			"title": "My InDesign Workflow",
+			"description": "I get a lot of questions about workflow, and InDesign has been a particularly popular subject recently, so I’ve put together a rundown of my page layout workflow.",
+			"url": "http://bdw-jeremyt-blog.com/article-03",
+			"guid": "003",
+			"categories": ["design", "typography", "software"],
+			"author": "Jeremy Tinianow",
+			"date": "30 Jan 2015"
+		},
+		{
+			"title": "Own It",
+			"description": "It was hot. And really muggy. In August, one becomes painfully aware that most of central Ohio used to be a swamp.",
+			"url": "http://bdw-jeremyt-blog.com/article-04",
+			"guid": "004",
+			"categories": ["design", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "07 Feb 2015"
+		},
+		{
+			"title": "Bespoke Photoshop Scripting",
+			"description": "Here at BDW, we keep what’s called a “Bugs Me List”. Each person’s list consists of items phrased as “It bugs me (that, when, how)…” followed by the details about what bugs them. It might sound like we’re bitching and moaning about everyday inconveniences, but quite the contrary, the Bugs Me List serves an important purpose.",
+			"url": "http://bdw-jeremyt-blog.com/article-05",
+			"guid": "005",
+			"categories": ["design", "software", "tech"],
+			"author": "Jeremy Tinianow",
+			"date": "14 Feb 2015"
+		},
+		{
+			"title": "Made From Scratch",
+			"description": "From spring of 2012 until now, I’ve gone from student to professional, back to student. Switching between these roles, I’ve become aware of a crucial difference between them. As a professional, I can (and must) be very efficient, always bringing on new projects, always delivering by a hard deadline. As a student, the rules aren’t as strict. I can be slow and make mistakes, and at the end of the day itÆs a learning experience.",
+			"url": "http://bdw-jeremyt-blog.com/article-06",
+			"guid": "006",
+			"categories": ["design", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "21 Feb 2015"
+		},
+		{
+			"title": "On Craft, Vision, and Laziness",
+			"description": "A few years ago, I was doing a bit of design work for a sustainability consulting firm. Their client, one of the largest private property owners in the U.S., had contracted with my client to launch a food-waste management initiative in their campus’s cafeterias. I was brought on to make my client’s presentations look nice, and to create a spec brand for the initiative.",
+			"url": "http://bdw-jeremyt-blog.com/article-07",
+			"guid": "007",
+			"categories": ["design", "ideas", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "28 Feb 2015"
+		},
+		{
+			"title": "Unicorns vs. Mutts",
+			"description": "We designers come in all shapes and sizes. Some focus on branding, others on print design, while some have a penchant for interactive work. Ask ten designers their opinion on the relative merits of generalization and specialization, and you’ll get ten different answers. Browse any design blog or newsfeed, and you’ll inevitably find a handful of articles about “unicorns” and (mostly) how they don’t exist.",
+			"url": "http://bdw-jeremyt-blog.com/article-08",
+			"guid": "008",
+			"categories": ["design", "typography", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "07 Mar 2015"
+		},
+		{
+			"title": "Web Design on the Bus",
+			"description": "I’m busy. No, really  &mdash;  I’m not trying to impress anyone. I spend about 60 hours a week making things. On top of that, my daily commute Monday through Friday is about 2—3 hours each day.",
+			"url": "http://bdw-jeremyt-blog.com/article-09",
+			"guid": "009",
+			"categories": ["design", "development", "tech"],
+			"author": "Jeremy Tinianow",
+			"date": "14 Mar 2015"
+		},
+		{
+			"title": "Start With Why",
+			"description": "The last ten weeks, I’ve been hearing a certain phrase quite a bit inside the walls of Boulder Digital Works. The phrase, “start with why,” has been in the back of my mind for two-and-a-half months.",
+			"url": "http://bdw-jeremyt-blog.com/article-10",
+			"guid": "010",
+			"categories": ["design", "philosophy", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "21 Mar 2015"
+		},
+		{
+			"title": "Why BDW, Part II",
+			"description": "At ten weeks in and with spring break coming to a close, I find myself reflecting on what I’ve learned attending BDW thus far, and what I’m looking forward to in the coming months.",
+			"url": "http://bdw-jeremyt-blog.com/article-11",
+			"guid": "011",
+			"categories": ["design", "education", "creativity"],
+			"author": "Jeremy Tinianow",
+			"date": "28 Mar 2015"
+		}
+
+	]
+}
