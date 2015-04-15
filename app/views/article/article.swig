@@ -1,8 +1,7 @@
 {% extends '../layout.swig' %}
 
 {% block content %}
-{% for article in articles %}
-  <h1>{{ article.title }}</h1>
-  <p>{{ article.description }}</p>
-{% endfor %}
+  <h1>{{ articles.title }}</h1>
+  <p>{{ articles.description }}</p>
+  <a href="/article/{{ articles.id }}/edit">Edit</a>
 {% endblock %}
