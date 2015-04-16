@@ -30,13 +30,11 @@ router.get("/:id", function(req, res, next) {
   Article.findOne({ _id: id }, function (err, post) {
     if (err) return next(err);
     // res.json(post);
-    res.render('article/article', {
+    res.render('article/show', {
       articles: post
     });
   });
 });
-
-// Above: use instead Article.findOne({where: { id: id}}) instead of Article.findById
 
 // localhost:3000/article/:id/edit
 router.get("/:id/edit", function(req, res, next) {
@@ -49,26 +47,29 @@ router.get("/:id/edit", function(req, res, next) {
   });
 });
 
-// router.put('/:id/post', function(req, res, next) {
-//   Article.update({
-//     title: req.param('title'),
-//     description: req.param('description')
-//   }, function(err, post) {
-//     res.redirect('/:id')
-//   });
-// });
-
+// localhost:3000/article/:id/update
 router.post('/:id/update', function (req, res) {
   var id = req.params.id;
   var title = req.body.title;
   var description = req.body.description;
-  Article.update({_id: id, title: title, description: description}, function (err, update) {
+  Article.findOne({_id: id}, function (err, p) {
     if (err) {
       res.send('error');
     } else {
-      res.send(update, 200);
+      Article.findOneAndUpdate({_id: id}, {title: title, description: description}, function (err, update) {
+        if (err) {
+          res.send('error');
+        } else {
+          Article.findOne({_id: id}, function (err, post) {
+            if (err) return next(err);
+            res.render('article/show', {
+              articles: post
+            });
+          });
+        }
+      });
     }
-  })
+  });
 });
 
 

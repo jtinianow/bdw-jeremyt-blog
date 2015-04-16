@@ -1,6 +1,7 @@
 {% extends '../layout.swig' %}
 
 {% block content %}
+<a href="/article">Back</a>
 <h1>
   <form method="post" action="update" accept-charset="utf-8">
   	<input type="text" name="title" style="width: 100%;" value="{{ articles.title }}"/>
