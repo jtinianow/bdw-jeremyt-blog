@@ -60,12 +60,7 @@ router.post('/:id/update', function (req, res) {
         if (err) {
           res.send('error');
         } else {
-          Article.findOne({_id: id}, function (err, post) {
-            if (err) return next(err);
-            res.render('article/show', {
-              articles: post
-            });
-          });
+          res.redirect('/article/' + update._id);
         }
       });
     }
