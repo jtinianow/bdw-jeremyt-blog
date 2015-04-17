@@ -11,59 +11,60 @@ module.exports = function (app) {
 // localhost:3000/article/
 router.get('/', function (req, res, next) {
 
-    // console.log('posts: ', posts);
+    // find all the articles in mongo db
 
     Article.find( function(err, articles){
-        if(err) return next(err);
+
         res.render('article/list', {
           title: 'Jerms',
-          articles: articles
+          articles: articles // return all the articles to list.swig
         });
 
     });
 
 });
 
-// localhost:3000/article/:id
+// localhost:3000/article/:id - show the article
 router.get("/:id", function(req, res, next) {
+
   var id = req.params.id;
-  Article.findOne({ _id: id }, function (err, post) {
-    if (err) return next(err);
-    // res.json(post);
+
+  // find all the articles in mongo db
+  Article.findOne({ _id: id }, function (err, article) {
+
     res.render('article/show', {
-      articles: post
+      title: 'Jerms',
+      article: article // return the article to show.swig
     });
   });
 });
 
 // localhost:3000/article/:id/edit
 router.get("/:id/edit", function(req, res, next) {
+
   var id = req.params.id;
-  Article.findOne({ _id: id }, function (err, edit) {
-    if (err) return next(err);
+
+  // find all the articles in mongo db
+  Article.findOne({ _id: id }, function (err, article) {
+
     res.render('article/edit', {
-      articles: edit
+      title: 'Jerms',
+      article: article // return the article to edit.swig
     });
   });
 });
 
 // localhost:3000/article/:id/update
-router.post('/:id/update', function (req, res) {
+router.post('/:id', function (req, res) {
+
   var id = req.params.id;
-  var title = req.body.title;
-  var description = req.body.description;
-  Article.findOne({_id: id}, function (err, p) {
-    if (err) {
-      res.send('error');
-    } else {
-      Article.findOneAndUpdate({_id: id}, {title: title, description: description}, function (err, update) {
-        if (err) {
-          res.send('error');
-        } else {
-          res.redirect('/article/' + update._id);
-        }
-      });
-    }
+  console.log(req.body);
+
+  Article.findOneAndUpdate({_id: id}, req.body, function (err, article) {
+    console.log(article);
+    if(err) return next(err);
+    res.redirect('/article/' + article._id);
+    
   });
 });
 

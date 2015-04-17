@@ -1,8 +1,13 @@
 {% extends '../layout.swig' %}
 
+
+
+
 {% block content %}
-<a href="/article">Back</a>
-  <h1>{{ articles.title }}</h1>
-  <p>{{ articles.description }}</p>
-  <a href="/article/{{ articles.id }}/edit">Edit</a>
+	<h2>{{ article.title }}</h2>
+	<p>{{ article.description }}</p>
+
+	<a class="button button-primary" href="/article">Back</a>
+	<a class="button button-primary" href="/article/{{ article.id }}/edit">Edit</a>
+	
 {% endblock %}

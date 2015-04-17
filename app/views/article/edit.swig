@@ -1,20 +1,19 @@
 {% extends '../layout.swig' %}
 
+
+
+
 {% block content %}
-<a href="/article">Back</a>
-<h1>
-  <form method="post" action="update" accept-charset="utf-8">
-  	<input type="text" name="title" style="width: 100%;" value="{{ articles.title }}"/>
-  	<textarea name="description" id="article-description" cols="60" rows="10">{{ articles.description }}</textarea>
-	<input type="submit", value="Save" />
-  </form>
-</h1>
-{# <p>
-	<form action="/edit" method="post" accept-charset="utf-8">
-		<input type="text" name="description" value="{{ articles.description }}">
-	</form>
-</p> #}
 
-
+<form action="/article/{{ article.id }}" method="post">
+	<label for="title">Title</label>
+	<input class="u-full-width" type="title" value="{{ article.title }}" id="title" name="title" />
+	
+	<label for="post">Post</label>
+	<textarea id="post" class="u-full-width" placeholder="" name="description">{{ article.description }}</textarea>
+	
+	<input class="button-primary" type="submit", value="Submit" />
+	<a class="button" href="/article/{{ article.id }}">Back</a>
+</form>
 
 {% endblock %}
