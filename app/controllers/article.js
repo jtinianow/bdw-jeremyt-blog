@@ -55,9 +55,15 @@ router.get("/:id/edit", function(req, res, next) {
 });
 
 // localhost:3000/article/:id/update
-router.post('/:id', function (req, res) {
+router.post('/:id', function (req, res, next) {
 
   var id = req.params.id;
+
+  var data = {
+    title: req.params.title,
+    description: req.params.description
+  };
+
   console.log(req.body);
 
   Article.findOneAndUpdate({_id: id}, req.body, function (err, article) {
@@ -65,6 +71,33 @@ router.post('/:id', function (req, res) {
     if(err) return next(err);
     res.redirect('/article/' + article._id);
     
+  });
+});
+
+
+// localhost:3000/article/new
+// router.get('/create/new', function (req, res, next) {
+//   res.render('article/create', {
+//       title: 'Jerms'
+//   });
+// });
+router.get('/create/new', function (req, res, next) {
+  res.render('article/create', {
+      title: 'Jerms',
+      article: new Article({})
+  });
+});
+
+router.post('/create/new', function (req, res, next) {
+  Article.create({
+    title: req.body.title,
+    description: req.body.description
+  }, function (err, article) {
+    if (err) return next(err);
+    Article.find( function (err, article) {
+      if (err) return next(err);
+      res.redirect('/article');
+    });
   });
 });
 

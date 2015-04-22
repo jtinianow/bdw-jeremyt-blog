@@ -9,12 +9,15 @@
 		{% for article in articles %}
 		<li class="article">
 			<a href="/article/{{ article.id }}"><h2>{{ article.title }}</h2></a>
-			<p>{{ article.description }}</p>
+			<p>{{ article.description | safe }}</p>
+			<p>{{ article.updatedAt |date('F jS, Y')}}</p>
 		</li>
 		{% endfor %}
 	</ol>
 	{% else %}
 		<h2>Nothing to see here.</h2>
 	{% endif %}
+
+	<a href="/article/create/new" class="button">Create New</a>
 
 {% endblock %}
