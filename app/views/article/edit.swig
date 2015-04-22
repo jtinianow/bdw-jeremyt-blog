@@ -16,4 +16,9 @@
 	<a class="button" href="/article/{{ article.id }}">Back</a>
 </form>
 
+
+<form method="post" action="/article/{{ article.id }}/delete">
+	<input id="delete" value="x" type="submit">
+</form>
+
 {% endblock %}

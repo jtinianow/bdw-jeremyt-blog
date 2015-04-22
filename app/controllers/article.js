@@ -74,33 +74,37 @@ router.post('/:id', function (req, res, next) {
   });
 });
 
-
-// localhost:3000/article/new
-// router.get('/create/new', function (req, res, next) {
-//   res.render('article/create', {
-//       title: 'Jerms'
-//   });
-// });
+// localhost:3000/article/create/new
 router.get('/create/new', function (req, res, next) {
   res.render('article/create', {
       title: 'Jerms',
-      article: new Article({})
+      article: new Article({}) //create an empty Article object
   });
 });
 
+// localhost:3000/article/create/new - post
 router.post('/create/new', function (req, res, next) {
-  Article.create({
-    title: req.body.title,
-    description: req.body.description
-  }, function (err, article) {
+  
+  var title = req.body.title;
+  var description = req.body.description;
+
+  // add new article to mongo db
+  Article.create({title: title, description: description}, function (err, article) {
     if (err) return next(err);
-    Article.find( function (err, article) {
-      if (err) return next(err);
-      res.redirect('/article');
-    });
+    res.redirect('/article');
   });
 });
 
+// localhost:3000/article/:id/delete
+router.post('/:id/delete', function (req, res, next) {
+
+  var id = req.params.id;
+
+  Article.remove({_id: id}, function (err, article) {
+    if(err) return next(err);
+    res.redirect('/article')
+  });
+});
 
 
 
