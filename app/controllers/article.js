@@ -11,9 +11,10 @@ module.exports = function (app) {
 // localhost:3000/article/
 router.get('/', function (req, res, next) {
 
+
     // find all the articles in mongo db
 
-    Article.find( function(err, articles){
+    Article.find().sort({'createdAt': -1}).exec( function(err, articles){
 
         res.render('article/list', {
           title: 'Jerms',
@@ -21,6 +22,8 @@ router.get('/', function (req, res, next) {
         });
 
     });
+
+
 
 });
 
@@ -84,12 +87,14 @@ router.get('/create/new', function (req, res, next) {
 
 // localhost:3000/article/create/new - post
 router.post('/create/new', function (req, res, next) {
-  
-  var title = req.body.title;
-  var description = req.body.description;
+
+  var data = {
+    title: req.body.title,
+    description: req.body.description
+  };
 
   // add new article to mongo db
-  Article.create({title: title, description: description}, function (err, article) {
+  Article.create(data, function (err, article) {
     if (err) return next(err);
     res.redirect('/article');
   });

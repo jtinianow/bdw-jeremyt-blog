@@ -2,7 +2,6 @@
 
 
 
-
 {% block content %}
 
 <form method="post">
