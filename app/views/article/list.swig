@@ -18,6 +18,6 @@
 		<h2>Nothing to see here.</h2>
 	{% endif %}
 
-	<a href="/article/create/new" class="button">Create New</a>
+	<a href="/article/create" class="button">Create New</a>
 
 {% endblock %}

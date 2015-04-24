@@ -27,6 +27,31 @@ router.get('/', function (req, res, next) {
 
 });
 
+
+// localhost:3000/article/create/new
+router.get('/create', function (req, res, next) {
+  res.render('article/create', {
+      title: 'Jerms',
+      article: new Article({}) //create an empty Article object
+  });
+});
+
+// localhost:3000/article/create/new - post
+router.post('/create', function (req, res, next) {
+
+  var data = {
+    title: req.body.title,
+    description: req.body.description
+  };
+
+  // add new article to mongo db
+  Article.create(data, function (err, article) {
+    if (err) return next(err);
+    res.redirect('/article');
+  });
+});
+
+
 // localhost:3000/article/:id - show the article
 router.get("/:id", function(req, res, next) {
 
@@ -74,29 +99,6 @@ router.post('/:id', function (req, res, next) {
     if(err) return next(err);
     res.redirect('/article/' + article._id);
     
-  });
-});
-
-// localhost:3000/article/create/new
-router.get('/create/new', function (req, res, next) {
-  res.render('article/create', {
-      title: 'Jerms',
-      article: new Article({}) //create an empty Article object
-  });
-});
-
-// localhost:3000/article/create/new - post
-router.post('/create/new', function (req, res, next) {
-
-  var data = {
-    title: req.body.title,
-    description: req.body.description
-  };
-
-  // add new article to mongo db
-  Article.create(data, function (err, article) {
-    if (err) return next(err);
-    res.redirect('/article');
   });
 });
 
