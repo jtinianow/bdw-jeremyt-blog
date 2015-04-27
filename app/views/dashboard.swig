@@ -1,9 +1,8 @@
-{% extends '../layout.swig' %}
-
-
+{% extends 'layout.swig' %}
 
 
 {% block content %}
+	<a href="/logout" class="btn">Logout</a>
 	{% if articles.length > 0 %}
 	<ol>
 		{% for article in articles %}
@@ -18,6 +17,6 @@
 		<h2>Nothing to see here.</h2>
 	{% endif %}
 
-	{# <a href="/article/create" class="button">Create New</a> #}
+	<a href="/article/create" class="button">Create New</a>
 
 {% endblock %}

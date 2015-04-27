@@ -59,27 +59,52 @@ router.get("/:id", function(req, res, next) {
 
   // find all the articles in mongo db
   Article.findOne({ _id: id }, function (err, article) {
+    if (req.user) { 
+      res.render('article/show-edit', {
+        title: 'Jerms',
+        article: article // return the article to show.swig
+      });
+    } else { 
+      res.render('article/show', {
+        title: 'Jerms',
+        article: article // return the article to show.swig
+      });
+    }
 
-    res.render('article/show', {
-      title: 'Jerms',
-      article: article // return the article to show.swig
-    });
+
   });
 });
 
 // localhost:3000/article/:id/edit
-router.get("/:id/edit", function(req, res, next) {
+// router.get("/:id/edit", function(req, res, next) {
+
+//   var id = req.params.id;
+
+//   // find all the articles in mongo db
+//   Article.findOne({ _id: id }, function (err, article) {
+
+//     res.render('article/edit', {
+//       title: 'Jerms',
+//       article: article // return the article to edit.swig
+//     });
+//   });
+// });
+
+router.get("/:id/edit", function (req, res, next) {
 
   var id = req.params.id;
 
-  // find all the articles in mongo db
-  Article.findOne({ _id: id }, function (err, article) {
+  if (req.user) {
+    Article.findOne({ _id: id }, function (err, article) {
 
-    res.render('article/edit', {
-      title: 'Jerms',
-      article: article // return the article to edit.swig
+      res.render('article/edit', {
+        title: 'Jerms',
+        article: article // return the article to edit.swig
+      });
     });
-  });
+  } else {
+    res.redirect('/');
+  }
 });
 
 // localhost:3000/article/:id/update
